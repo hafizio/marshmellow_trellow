@@ -19,11 +19,13 @@ group :assets do
   # To use debugger
   # gem 'debugger'
   gem 'uglifier', '>= 1.0.3'
+  gem 'letter_opener'
 end
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'backbone-on-rails'
+gem 'devise'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
