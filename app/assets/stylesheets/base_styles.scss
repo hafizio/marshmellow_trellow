@@ -2,7 +2,7 @@
 
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
 
-.navbar-brand, .brand-name {
+.navbar-brand, .mm-brand {
   font-family: 'Pacifico', cursive;
 }
 
@@ -10,7 +10,7 @@
   position: relative;
 }
 
-.mm-brand {
+.mm-brand-center {
   position: absolute;
   width: 80px;
   font-size: 18px;
@@ -22,4 +22,12 @@
 .medium {
   font-size: 24px;
   margin-left: -50px;
+}
+
+.header-gravatar {
+  padding: 0px;
+}
+
+.navbar {
+  padding: .5em 0;
 }
