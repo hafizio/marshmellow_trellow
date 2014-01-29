@@ -1,1 +1,28 @@
+<header>
+  <nav class="navbar navbar-default mm-navbar" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#marshmellow-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+      <a href="#" class="navbar-brand"><h1 class=" mm-brand">Marshmellow</h1></a>
+    </div>
+    
+    <div class="collapse navbar-collapse navbar-right" id="marshmellow-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <% if user_signed_in? %>
+          <li><%= link_to "Log Out", destroy_user_session_url, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_url %>
+          <li><%= link_to "Sign In", new_user_session_url %>
+          
+        <% end %>
+      </ul>
+      
+    </div>
+  </nav>
+</header>
+
 <h1>The Index!</h1>

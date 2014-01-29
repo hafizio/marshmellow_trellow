@@ -1,0 +1,25 @@
+/* twitter bootstrap takes care of basic reset and styles */
+
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+
+.navbar-brand, .brand-name {
+  font-family: 'Pacifico', cursive;
+}
+
+.mm-navbar {
+  position: relative;
+}
+
+.mm-brand {
+  position: absolute;
+  width: 80px;
+  font-size: 18px;
+  margin-left: -40px;
+  left: 50%;
+  top: -10px;
+}
+
+.medium {
+  font-size: 24px;
+  margin-left: -50px;
+}
