@@ -3,7 +3,7 @@ Marshmellow::Application.routes.draw do
 
   root :to => "static_pages#index"
 
-  namespace :api do
+  namespace :api, defaults: { format: :json } do
     resources :boards, only: :show
   end
 
