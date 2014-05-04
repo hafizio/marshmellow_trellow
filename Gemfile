@@ -37,4 +37,4 @@ gem 'jbuilder'
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
+gem 'react-rails', github: 'reactjs/react-rails'
