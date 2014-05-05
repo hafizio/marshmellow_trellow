@@ -4,4 +4,8 @@ class Api::BoardsController < ApplicationController
   def show
     @board = Board.where(id: params[:id]).includes(lists: [:cards]).first
   end
+
+  def index
+    @boards = current_user.boards
+  end
 end
