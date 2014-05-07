@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 
 var MarshmellowBoard = React.createClass({
-//  mixins: [Marshmellow.BackboneMixin],
+  mixins: [BackboneMixin],
   updateBoards: function(newCollection) {
     this.setState({ backboneCollection: newCollection });
   },
@@ -20,6 +20,12 @@ var MarshmellowBoard = React.createClass({
     return { backboneCollection: boardsCollection };
   },
 
+  handleNewBoard: function(boardTitle) {
+    this.state.backboneCollection.create({title: boardTitle}, {
+      error: this.handleErrors
+    });
+  },
+
   render: function() {
     var boardNodes = [];
     this.state.backboneCollection.each(function(boardModel) {
@@ -34,6 +40,7 @@ var MarshmellowBoard = React.createClass({
       <div className='boards-index'>
         <h1>Boards</h1>
         {boardNodes}
+        <BoardForm saveBoard={this.handleNewBoard} />
       </div>
     );
   }
