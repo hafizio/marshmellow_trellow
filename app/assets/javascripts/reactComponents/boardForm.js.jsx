@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 
-var BoardForm = React.createClass({
+Marshmellow.BoardForm = React.createClass({
   handleSubmit: function(e) {
     e.preventDefault();
     var titleInput = this.refs.boardTitle.getDOMNode();

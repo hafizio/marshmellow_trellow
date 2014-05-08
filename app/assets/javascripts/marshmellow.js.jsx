@@ -6,7 +6,8 @@ window.Marshmellow = {
   Views: {},
   Routers: {},
   initialize: function() {
-    React.renderComponent(<MarshmellowBoard />, document.getElementById('backbone-index-boards'));
+    var BoardIndex = Marshmellow.BoardIndex;
+    React.renderComponent(<BoardIndex />, document.getElementById('backbone-index-boards'));
   }
 };
 

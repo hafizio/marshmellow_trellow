@@ -1,6 +1,7 @@
 /** @jsx React.DOM */
+var BoardForm = Marshmellow.BoardForm;
 
-var MarshmellowBoard = React.createClass({
+Marshmellow.BoardIndex = React.createClass({
   mixins: [BackboneMixin],
   updateBoards: function(newCollection) {
     this.setState({ backboneCollection: newCollection });
