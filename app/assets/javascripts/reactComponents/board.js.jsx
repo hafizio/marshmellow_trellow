@@ -29,9 +29,20 @@ var MarshmellowBoard = React.createClass({
   render: function() {
     var boardNodes = [];
     this.state.backboneCollection.each(function(boardModel) {
+      var listNodes = [];
+      boardModel.lists().each(function(listModel){
+        var listNode = (
+          <li>{listModel.get('title')}</li>
+        );
+        listNodes.push(listNode);
+      });
       var boardNode = (
         <div className='board'>
-          <p>{boardModel.get('title')}</p>
+          <h2>{boardModel.get('title')}</h2>
+          <small>Lists:</small>
+          <ul>
+            {listNodes}
+          </ul>
         </div>
       );
       boardNodes.push(boardNode);
