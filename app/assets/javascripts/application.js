@@ -20,5 +20,8 @@
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./util
-//= require_tree ./reactComponents
+//= require ./reactComponents/list
+//= require ./reactComponents/board
+//= require ./reactComponents/boardForm
+//= require ./reactComponents/boardIndex
 //= require_tree .

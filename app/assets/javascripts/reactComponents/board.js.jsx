@@ -1,11 +1,12 @@
 /** @jsx React.DOM */
 
+var List = Marshmellow.List;
 Marshmellow.Board = React.createClass({
   render: function() {
     var listNodes = [];
     this.props.boardModel.lists().each(function(listModel){
       var listNode = (
-        <li>{listModel.get('title')}</li>
+        <List listModel={listModel} />
       );
       listNodes.push(listNode);
     });
