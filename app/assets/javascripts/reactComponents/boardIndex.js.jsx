@@ -14,12 +14,7 @@ Marshmellow.BoardIndex = React.createClass({
   },
 
   getInitialState: function() {
-    var boardsCollection = new Marshmellow.Collections.Boards([]);
-    boardsCollection.fetch({
-      success: this.updateBoards,
-      error: this.handleErrors
-    }); //async operation
-    return { backboneCollection: boardsCollection };
+    return { backboneCollection: Marshmellow.allBoards };
   },
 
   handleNewBoard: function(boardTitle) {
