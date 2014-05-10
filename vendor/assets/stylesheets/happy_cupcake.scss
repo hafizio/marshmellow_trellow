@@ -1,0 +1,23 @@
+/* Happy Cupcake Styles Manifest */
+
+/* basic utilities */
+@import "happy_cupcake/variables";
+@import "happy_cupcake/mixins";
+
+/* reset */
+@import "happy_cupcake/reset";
+
+/* responsive grid */
+@import "happy_cupcake/grid";
+
+/* base styles */
+@import "happy_cupcake/base";
+@import "happy_cupcake/forms";
+
+/* basic components */
+@import "happy_cupcake/navbar";
+@import "happy_cupcake/modal";
+@import "happy_cupcake/tabs";
+@import "happy_cupcake/bubbles";
+@import "happy_cupcake/footer";
+

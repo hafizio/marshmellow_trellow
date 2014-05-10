@@ -1,0 +1,14 @@
+/* Happy Cupcake Responsive Grid */
+
+.container {
+  margin: 0 auto;
+  padding-bottom: $base-padding;
+  width: 90%;
+  }
+
+.row {
+  @include clearfix;
+}
+
+@include build-cols;
+

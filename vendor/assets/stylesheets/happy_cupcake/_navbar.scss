@@ -1,0 +1,121 @@
+/* Happy Cupcake Navbar Styles */
+/* navbar styles */
+
+.nav li {
+  list-style-type: none;
+  clear: both;
+  &.active {
+    background-color: $darken-happy-color;
+    a:hover {
+      background-color: darken($darken-happy-color, 5%);
+    }
+  }
+  a {
+    padding: ($base-padding / 2);
+    color: $happy-font-color;
+    text-decoration: none;
+    display: block;
+    &:hover {
+      text-decoration: underline;
+      background-color: $darken-happy-color;
+    }
+  }
+}
+
+.navbar {
+  background-color: #cecece;
+  border: 1px solid #B6B6B6;
+  padding: 1em;
+}
+
+.navbar-brand {
+  float: left;
+  color: $happy-font-color;
+  &:visited {
+    color: $happy-font-color;
+  }
+  &:hover {
+    color: $happy-font-color;
+  }
+}
+
+.navbar-toggle {
+  float: right;
+  @include remove-active-glow;
+}
+
+.nav-collapse {
+  display: none;
+}
+
+/* in small screens inner nav should be
+styled like a dropdown */
+
+.navbar .nav-collapse {
+  border: solid 1px #B6B6B6;
+}
+
+.navbar .nav-collapse li {
+  display: block;
+}
+
+.nav-navbar {
+  background-color: $happy-color;
+  display: block;
+  width: 100%;
+  padding: $base-padding;
+  color: #fff;
+  @include clearfix;
+  @include border-box;
+}
+
+
+.navbar-brand {
+  float: left;
+  padding: ($base-padding / 2);
+  text-decoration: none;
+  font-weight: bold;
+  color: $happy-font-color;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.visible {
+  display: block !important;
+}
+
+@media (min-width: $screen-sm) {
+  .navbar-toggle {
+    display: none;
+  }
+
+  .nav-collapse {
+    display: block;
+  }
+
+  .navbar-brand {
+    padding: $base-padding;
+  }
+
+  .nav {
+    padding: $base-padding;
+    li {
+      clear: none;
+      padding: 0 ($base-padding / 2);
+      float: right;
+      a {
+        display: inline-block;
+        &:hover {
+          background: $happy-color;
+        }
+      }
+      &.active {
+        background-color: $happy-color;
+        a:hover {
+         background-color: $happy-color;
+        }
+      }
+    }
+  }
+}

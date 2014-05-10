@@ -1,0 +1,45 @@
+/* Happy Cupcake Variables */
+
+$base-padding: 1.5em;
+$base-margin: .5em;
+$frosting-color: #FF80B5;
+$happy-color: #36C998;
+$happy-font-color: #ffffff; /* used in navbar and footer */
+$neutral-color: #DAE6E2;
+$darken-happy-color: darken($happy-color, 5%);
+$tab-content-color: #ffffff;
+
+/* colors for variety */
+$red: #FF6B6B;
+$orange: #FFDA6B;
+$yellow: #FEFF6B;
+$green: #7EFF6B;
+$blue: #6BAFFF;
+$purple: #C66BFF;
+
+$success-color: darken($green, 25%);
+$caution-color: darken($orange, 15%);
+$danger-color: $red;
+
+/* grid var.s */
+$num-cols: 12;
+$grid-gutter-width: 1em;
+
+/* css3 media query breakpoints */
+
+// Extra small screen / phone
+$screen-xs:                  480px !default;
+
+// Small screen / tablet
+$screen-sm:                  768px !default;
+
+// Medium screen / desktop
+$screen-md:                  992px !default;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm - 1) !default;
+$screen-sm-max:              ($screen-md - 1) !default;
+$screen-md-max:              ($screen-lg - 1) !default;
