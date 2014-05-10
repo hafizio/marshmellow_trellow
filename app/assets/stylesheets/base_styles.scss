@@ -47,6 +47,11 @@ $brand-color: #23719F;
     text-decoration: none;
     color: #fff;
   }
+  &:active,
+  &:visited {
+    text-decoration: none;
+    color: #fff;
+  }
 }
 
 .offset-col-third {
