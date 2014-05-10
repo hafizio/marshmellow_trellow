@@ -2,6 +2,10 @@
 
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
 
+/* TODO: refactor styles into sep. files */
+
+$brand-color: #23719F;
+
 .navbar-brand, .mm-brand {
   font-family: 'Pacifico', cursive;
 }
@@ -30,4 +34,25 @@
 
 .navbar {
   padding: .5em 0;
+}
+
+.board-show-link {
+  display: block;
+  height: 90px;
+  background-color: $brand-color;
+  margin-bottom: .4em;
+  color: #fff;
+  &:hover {
+    background-color: scale-color($brand-color, $lightness: -10%);
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+.offset-col-third {
+  margin-left: 2.7%;
+}
+
+.offset-row-third{
+  margin-left: -2.7%;
 }

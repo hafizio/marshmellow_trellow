@@ -38,9 +38,13 @@ Marshmellow.BoardIndex = React.createClass({
     });
     return (
       <div className='boards-index'>
-        <h1>Boards</h1>
-        {boardNodes}
-        <BoardForm saveBoard={this.handleNewBoard} />
+        <h3>My Boards</h3>
+        <div className='row offset-row-third'>
+          {boardNodes}
+        </div>
+        <div className='row' >
+          <BoardForm saveBoard={this.handleNewBoard} />
+        </div>
       </div>
     );
   }
