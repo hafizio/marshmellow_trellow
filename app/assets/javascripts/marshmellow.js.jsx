@@ -7,7 +7,8 @@ window.Marshmellow = {
     Marshmellow.allBoards = new Marshmellow.Collections.Boards([]);
     Marshmellow.allBoards.fetch({}); //async operation
     boardRouter = new Marshmellow.Routers.BoardRouter({
-      $rootEl: document.getElementById('backbone-index-boards')
+      $rootEl: $('#backbone-index-boards'),
+      $headerEl: $('#mm-main-header')
     });
     Backbone.history.start();
   }

@@ -1,4 +1,4 @@
-<header>
+<header id="mm-main-header">
   <nav class="nav-navbar" role="navigation">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle button" data-toggle="collapse" data-target="#marshmellow-navbar-collapse-1">
@@ -16,13 +16,13 @@
       <% if user_signed_in? %>
         <li><a href="#" class="button button-default"><span class="glyphicon glyphicon-plus"></span></a>
         <li>
-          <div class="button-group">
-            <a href="#" class="button button-default header-gravatar">
+          <div id="profile-toggle" class="button-group">
+            <a href="#" id="profile-toggle__avatar-button" class="button button-default header-gravatar" disabled="true">
             <img src="<%= avatar_url(current_user, 31) %>">
             </a>
-            <a href="#" class="button button-default"><%= current_user.username %></a>
+            <a href="#" class="button button-default" disabled="true"><%= current_user.username %></a>
           </div>
-        <li><%= link_to "Log Out", destroy_user_session_url, method: :delete %></li>
+        <li><%= link_to "Log Out", destroy_user_session_url, method: :delete, class: "js-hide" %></li>
       <% else %>
         <li><%= link_to "Sign Up", new_user_registration_url, class: "button button-success" %>
         <li><%= link_to "Sign In", new_user_session_url, class: "button button-default" %>

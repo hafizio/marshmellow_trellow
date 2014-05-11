@@ -61,3 +61,10 @@ $brand-color: #23719F;
 .offset-row-third{
   margin-left: -2.7%;
 }
+
+.hide {
+  /* deep nesting in Happy Cupcake is causing high priority styling.
+  Override with !important, but
+  TODO: convert Happy Cupcake to BEM and flatten out style nesting. */
+  display: none !important;
+}

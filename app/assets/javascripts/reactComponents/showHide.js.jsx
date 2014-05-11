@@ -1,4 +1,6 @@
-Marshmellow.showHide = React.createClass({
+/** @jsx React.DOM */
+
+Marshmellow.ShowHide = React.createClass({
   getInitialState: function() {
     return { hidden: true };
   },
@@ -13,6 +15,7 @@ Marshmellow.showHide = React.createClass({
     var hideClass = (this.state.hidden) ? "hide" : "";
     return (
       <div className={"show-hide " + this.props.additionalClasses} >
+        {this.props.prependContents}
         <a className={"show-hide__toggle"} onClick={this.toggleContent} >
           {this.props.toggleText}
         </a>
