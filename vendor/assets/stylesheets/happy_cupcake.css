@@ -357,6 +357,12 @@ button.button[disabled], .button[disabled] {
   background-color: #36c998;
   background: linear-gradient(45deg, #36c998 25%, #5ed4ad 25%, #5ed4ad 50%, #36c998 50%, #36c998 75%, #5ed4ad 75%);
   background-size: 10px 10px; }
+  a.button[disabled]:hover, input.button[disabled]:hover,
+  button.button[disabled]:hover, .button[disabled]:hover {
+    cursor: default;
+    background-color: #36c998;
+    background: linear-gradient(45deg, #36c998 25%, #5ed4ad 25%, #5ed4ad 50%, #36c998 50%, #36c998 75%, #5ed4ad 75%);
+    background-size: 10px 10px; }
 
 /* inverse color style */
 .button.button-inverse {
@@ -378,6 +384,11 @@ a.button.button-inverse:visited {
   background-color: #e6e6e6;
   background: linear-gradient(45deg, #e6e6e6 25%, white 25%, white 50%, #e6e6e6 50%, #e6e6e6 75%, white 75%);
   background-size: 10px 10px; }
+  .button.button-inverse[disabled]:hover {
+    cursor: default;
+    background-color: #e6e6e6;
+    background: linear-gradient(45deg, #e6e6e6 25%, white 25%, white 50%, #e6e6e6 50%, #e6e6e6 75%, white 75%);
+    background-size: 10px 10px; }
 
 /* success button */
 .button.button-success {
@@ -390,6 +401,11 @@ a.button.button-inverse:visited {
   background-color: #1eeb00;
   background: linear-gradient(45deg, #1eeb00 25%, #3bff1f 25%, #3bff1f 50%, #1eeb00 50%, #1eeb00 75%, #3bff1f 75%);
   background-size: 10px 10px; }
+  .button.button-success[disabled]:hover {
+    cursor: default;
+    background-color: #1eeb00;
+    background: linear-gradient(45deg, #1eeb00 25%, #3bff1f 25%, #3bff1f 50%, #1eeb00 50%, #1eeb00 75%, #3bff1f 75%);
+    background-size: 10px 10px; }
 
 /* caution button */
 .button.button-caution {
@@ -402,6 +418,11 @@ a.button.button-inverse:visited {
   background-color: #ffc71f;
   background: linear-gradient(45deg, #ffc71f 25%, #ffd452 25%, #ffd452 50%, #ffc71f 50%, #ffc71f 75%, #ffd452 75%);
   background-size: 10px 10px; }
+  .button.button-caution[disabled]:hover {
+    cursor: default;
+    background-color: #ffc71f;
+    background: linear-gradient(45deg, #ffc71f 25%, #ffd452 25%, #ffd452 50%, #ffc71f 50%, #ffc71f 75%, #ffd452 75%);
+    background-size: 10px 10px; }
 
 /* danger button */
 .button.button-danger {
@@ -414,6 +435,11 @@ a.button.button-inverse:visited {
   background-color: #ff6b6b;
   background: linear-gradient(45deg, #ff6b6b 25%, #ff9e9e 25%, #ff9e9e 50%, #ff6b6b 50%, #ff6b6b 75%, #ff9e9e 75%);
   background-size: 10px 10px; }
+  .button.button-danger[disabled]:hover {
+    cursor: default;
+    background-color: #ff6b6b;
+    background: linear-gradient(45deg, #ff6b6b 25%, #ff9e9e 25%, #ff9e9e 50%, #ff6b6b 50%, #ff6b6b 75%, #ff9e9e 75%);
+    background-size: 10px 10px; }
 
 /* button groups */
 .button-group:before, .button-group:after {
@@ -539,7 +565,7 @@ styled like a dropdown */
     text-decoration: underline; }
 
 .visible {
-  display: block !important; }
+  display: block; }
 
 @media (min-width: 768px) {
   .navbar-toggle {
@@ -644,6 +670,10 @@ button.close {
   /* useful if you don't want a bg color from leaking outside the border: */
   margin-bottom: -2px;
   margin-left: 1.5em; }
+  .nav-tabs li a {
+    color: white; }
+    .nav-tabs li a:hover {
+      background-color: #36c998; }
 
 .nav-tabs li.active {
   background-color: white;
@@ -654,6 +684,8 @@ button.close {
   border-bottom: solid 1px white; }
   .nav-tabs li.active a {
     color: #36c998; }
+    .nav-tabs li.active a:hover {
+      background-color: white; }
 
 .tab-content {
   background-color: white;

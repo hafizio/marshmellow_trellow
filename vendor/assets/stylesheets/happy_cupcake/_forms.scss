@@ -58,6 +58,10 @@ a.button[disabled], input.button[disabled],
 button.button[disabled], .button[disabled] {
   cursor: default;
   @include striped_background($happy-color);
+  &:hover {
+    cursor: default;
+    @include striped_background($happy-color);
+  }
 }
 
 /* inverse color style */
@@ -82,6 +86,10 @@ a.button.button-inverse:visited {
 
 .button.button-inverse[disabled] {
   @include striped_background(darken($happy-font-color, 10%));
+  &:hover {
+    cursor: default;
+    @include striped_background(darken($happy-font-color, 10%));
+  }
 }
 
 /* success button */
@@ -95,6 +103,10 @@ a.button.button-inverse:visited {
 
 .button.button-success[disabled] {
   @include striped_background($success-color);
+  &:hover {
+    cursor: default;
+    @include striped_background($success-color);
+  }
 }
 
 /* caution button */
@@ -108,6 +120,10 @@ a.button.button-inverse:visited {
 
 .button.button-caution[disabled] {
   @include striped_background($caution-color);
+  &:hover {
+    cursor: default;
+    @include striped_background($caution-color);
+  }
 }
 
 /* danger button */
@@ -121,6 +137,10 @@ a.button.button-inverse:visited {
 
 .button.button-danger[disabled] {
   @include striped_background($danger-color);
+  &:hover {
+    cursor: default;
+    @include striped_background($danger-color);
+  }
 }
 
 /* button groups */
