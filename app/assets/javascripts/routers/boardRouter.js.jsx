@@ -13,27 +13,37 @@ Marshmellow.Routers.BoardRouter = Backbone.Router.extend({
     // remove the visible Log Out link (this appears in showHide
     // TODO: there must be a better way to do this
     var $profileToggle = $($headerEl.find('#profile-toggle')),
-        profileTogClasses = $profileToggle.attr("class"),
-        profileTogText = $profileToggle.text(),
-        $prepEl = $('#profile-toggle__avatar-button'),
-        prepClasses = $prepEl.attr("class"),
-        prepContent = $prepEl.html(),
         toggleContents = (
            <a href="/users/sign_out" data-method="delete" rel="nofollow">Log Out</a>
         ),
+        $prepEl = $('#profile-toggle__avatar-button'),
+        prepClasses = $prepEl.attr("class"),
+        prepContent = $prepEl.html(),
         prependContents = (
             <a href="#" class={prepClasses}>
               {prepContent}
             </a>
         );
+      this._buildShowHide($profileToggle, toggleContents, prependContents);
+    },
 
-    var ShowHide = Marshmellow.ShowHide,
-        profileToggleComponent = (
-        <ShowHide additionalClasses={profileTogClasses} prependContent={prependContents} toggleText={profileTogText} >
-          {toggleContents}
-        </ShowHide>
-    );
-    React.renderComponent(profileToggleComponent, $profileToggle.get(0));
+    _buildShowHide: function($toggleEl, toggleContents, prependContents = nil) {
+      var profileTogClasses = $toggleEl.attr("class"),
+          profileTogText = $toggleEl.text();
+      this._renderShowHide($toggleEl, profileTogClasses, prependContents,
+          profileTogText, toggleContents);
+    },
+
+    _renderShowHide: function($el, toggleClasses, prependContents, toggleText,
+                         toggleContents) {
+      var ShowHide = Marshmellow.ShowHide,
+          toggleComponent = (
+          <ShowHide additionalClasses={toggleClasses}
+          prependContent={prependContents} toggleText={toggleText} >
+            {toggleContents}
+          </ShowHide>
+      );
+      React.renderComponent(toggleComponent, $el.get(0));
   },
 
   routes: {
