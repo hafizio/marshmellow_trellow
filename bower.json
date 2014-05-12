@@ -1,0 +1,22 @@
+{
+  "name": "marshmellow",
+  "version": "0.0.0",
+  "homepage": "https://github.com/flarnie/marshmellow_trellow",
+  "authors": [
+    "Flarnie Marchan <fnonemaker@gmail.com>"
+  ],
+  "description": "Demo of Backbone JS, React JS, and Happy Cupcake. It's a Trello clone.",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "happy-cupcake": "git://github.com/flarnie/happy-cupcake.git"
+  }
+}

@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require happy_cupcake
+//= require happy-cupcake/vendor/assets/javascripts/happy_cupcake
 //= require underscore
 //= require backbone
 //= require react

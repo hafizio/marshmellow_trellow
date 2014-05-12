@@ -58,5 +58,6 @@ module Marshmellow
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
   end
 end
