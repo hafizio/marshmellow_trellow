@@ -14,7 +14,20 @@ Marshmellow.Routers.BoardRouter = Backbone.Router.extend({
     // TODO: there must be a better way to do this
     var $profileToggle = $($headerEl.find('#profile-toggle')),
         toggleContents = (
-           <a href="/users/sign_out" data-method="delete" rel="nofollow">Log Out</a>
+          <ul className="horiz-nav">
+            <li className="horiz-nav__header">Username Here</li>
+            <hr />
+            <li>
+              <a href="#" disabled="true">Profile</a>
+            </li>
+            <li>
+              <a href="#" disabled="true">Help</a>
+            </li>
+            <hr />
+            <li>
+              <a href="/users/sign_out" data-method="delete" rel="nofollow">Log Out</a>
+            </li>
+          </ul>
         ),
         $prepEl = $('#profile-toggle__avatar-button'),
         prepClasses = $prepEl.attr("class"),
@@ -27,7 +40,7 @@ Marshmellow.Routers.BoardRouter = Backbone.Router.extend({
       this._buildShowHide($profileToggle, toggleContents, prependContents);
     },
 
-    _buildShowHide: function($toggleEl, toggleContents, prependContents = nil) {
+    _buildShowHide: function($toggleEl, toggleContents, prependContents) {
       var profileTogClasses = $toggleEl.attr("class"),
           profileTogText = $toggleEl.text();
       this._renderShowHide($toggleEl, profileTogClasses, prependContents,

@@ -2,38 +2,12 @@
 
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
 
-/* TODO: refactor styles into sep. files */
-
+$base-padding: 1.5em;
 $brand-color: #23719F;
-
-.navbar-brand, .mm-brand {
-  font-family: 'Pacifico', cursive;
-}
-
-.mm-navbar {
-  position: relative;
-}
-
-.mm-brand-center {
-  position: absolute;
-  width: 80px;
-  font-size: 18px;
-  margin-left: -40px;
-  left: 50%;
-  top: -10px;
-}
 
 .medium {
   font-size: 24px;
   margin-left: -50px;
-}
-
-.header-gravatar {
-  padding: 0px;
-}
-
-.navbar {
-  padding: .5em 0;
 }
 
 .board-show-link {
