@@ -13,9 +13,10 @@ Marshmellow.Routers.BoardRouter = Backbone.Router.extend({
     // remove the visible Log Out link (this appears in showHide
     // TODO: there must be a better way to do this
     var $profileToggle = $($headerEl.find('#profile-toggle')),
+        currentUserUsername = Marshmellow.currentUser.get('username'),
         toggleContents = (
           <ul className="horiz-nav">
-            <li className="horiz-nav__header">Username Here</li>
+            <li className="horiz-nav__header">{currentUserUsername}</li>
             <hr />
             <li>
               <a href="#" disabled="true">Profile</a>

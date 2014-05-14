@@ -9,3 +9,6 @@
     <%= link_to "Sign Up - It's Free!", new_user_registration_url, class: "btn btn-primary btn-large" %>
   </div>
 <% end %>
+<%= content_for :javascript do %>
+  <%= render 'shared/bootstrap' %>
+<% end %>

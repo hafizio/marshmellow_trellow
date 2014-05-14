@@ -1,0 +1,4 @@
+<script>
+  var currentUserJSON = <%= sanitize current_user.to_json(only: [:id, :username]) %>;
+  Marshmellow.currentUser = new Marshmellow.Models.User(currentUserJSON);
+</script>
