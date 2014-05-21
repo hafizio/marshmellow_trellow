@@ -10,9 +10,11 @@ Marshmellow.BoardDetail = React.createClass({
       );
       listNodes.push(listNode);
     });
+    var titleToShow = (this.props.showTitle) ? (<h2>{this.props.boardModel.get('title')}</h2>) : null;
+
     return (
       <div className='board'>
-        <h2>{this.props.boardModel.get('title')}</h2>
+        {titleToShow}
         <small>Lists:</small>
         <ul>
           {listNodes}

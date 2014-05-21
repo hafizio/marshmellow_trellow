@@ -5,12 +5,15 @@ window.Marshmellow = {
   Routers: {},
   initialize: function() {
     Marshmellow.allBoards = new Marshmellow.Collections.Boards([]);
-    Marshmellow.allBoards.fetch({}); //async operation
-    boardRouter = new Marshmellow.Routers.BoardRouter({
-      $rootEl: $('#backbone-index-boards'),
-      $headerEl: $('#mm-main-header')
-    });
-    Backbone.history.start();
+    Marshmellow.allBoards.fetch({
+      success: function() {
+        boardRouter = new Marshmellow.Routers.BoardRouter({
+          $rootEl: $('#backbone-index-boards'),
+          $headerEl: $('#mm-main-header')
+        });
+        Backbone.history.start();
+      }
+    }); //async operation
   }
 };
 
