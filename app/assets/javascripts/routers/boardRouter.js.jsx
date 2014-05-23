@@ -36,12 +36,13 @@ Marshmellow.Routers.BoardRouter = Backbone.Router.extend({
         $prepEl = $('#profile-toggle__avatar-button'),
         prepClasses = $prepEl.attr("class"),
         prepContent = $prepEl.html(),
+        renderIntoEl = $('#profile-dropdown').get(0),
         prependContents = (
             <a href="#" class={prepClasses}>
               {prepContent}
             </a>
         );
-    this._buildShowHide($profileToggle, toggleContents, prependContents);
+    this._buildShowHide($profileToggle, toggleContents, prependContents, renderIntoEl);
   },
 
   renderNewBoardDropdown: function($headerEl) {
@@ -69,19 +70,20 @@ Marshmellow.Routers.BoardRouter = Backbone.Router.extend({
             </li>
           </ul>
         ),
+        renderIntoEl = $('#add-board-dropdown').get(0),
         prependContents = (null);
-      this._buildShowHide($newBoardToggle, toggleContents, prependContents);
+      this._buildShowHide($newBoardToggle, toggleContents, prependContents, renderIntoEl);
     },
 
-    _buildShowHide: function($toggleEl, toggleContents, prependContents) {
+    _buildShowHide: function($toggleEl, toggleContents, prependContents, renderIntoEl) {
       var profileTogClasses = $toggleEl.attr("class"),
           profileTogText = $toggleEl.text();
       this._renderShowHide($toggleEl, profileTogClasses, prependContents,
-          profileTogText, toggleContents);
+          profileTogText, toggleContents, renderIntoEl);
     },
 
     _renderShowHide: function($el, toggleClasses, prependContents, toggleText,
-                         toggleContents) {
+                         toggleContents, renderIntoEl) {
       var ShowHide = Marshmellow.ShowHide,
           toggleComponent = (
           <ShowHide additionalClasses={toggleClasses}
@@ -89,7 +91,8 @@ Marshmellow.Routers.BoardRouter = Backbone.Router.extend({
             {toggleContents}
           </ShowHide>
       );
-      React.renderComponent(toggleComponent, $el.get(0));
+      React.renderComponent(toggleComponent, renderIntoEl);
+      $el.remove();
   },
 
   routes: {
