@@ -2,7 +2,6 @@
 
 Marshmellow.Routers.BoardRouter = Backbone.Router.extend({
   initialize: function(options) {
-    $(".js-hide").addClass("hide");
     this.renderHeaderElements(options.$headerEl);
     this.$rootEl = options.$rootEl;
   },
@@ -13,13 +12,20 @@ Marshmellow.Routers.BoardRouter = Backbone.Router.extend({
   },
 
   renderProfileDropdown: function($headerEl) {
+    var currentUserName = Marshmellow.currentUser.get('username') ||
+      Marshmellow.currentUser.get('email');
+    var profileToggleEl = (
+      <div id="profile-toggle" class="button-group">
+        <a href="#" id="profile-toggle__avatar-button" class="button button-default header-gravatar" disabled="true">
+        <img src={Marshmellow.currentUser.avatarUrl} />
+        </a>
+        <a href="#" class="button button-default" disabled="true">{currentUserName}</a>
+      </div>
+    );
     // TODO: there must be a better way to do this
-    var $profileToggle = $($headerEl.find('#profile-toggle')),
-        currentUserUsername = Marshmellow.currentUser.get('username') ||
-          Marshmellow.currentUser.get('email'),
-        toggleContents = (
+    var toggleContents = (
           <ul className="horiz-nav">
-            <li className="horiz-nav__header">{currentUserUsername}</li>
+            <li className="horiz-nav__header">{currentUserName}</li>
             <hr />
             <li>
               <a href="#" disabled="true">Profile</a>
@@ -33,67 +39,55 @@ Marshmellow.Routers.BoardRouter = Backbone.Router.extend({
             </li>
           </ul>
         ),
-        $prepEl = $('#profile-toggle__avatar-button'),
-        prepClasses = $prepEl.attr("class"),
-        prepContent = $prepEl.html(),
-        renderIntoEl = $('#profile-dropdown').get(0),
-        prependContents = (
-            <a href="#" class={prepClasses}>
-              {prepContent}
-            </a>
-        );
-    this._buildShowHide($profileToggle, toggleContents, prependContents, renderIntoEl);
+        classBlock = "profile-dropdown",
+        renderIntoEl = $('#profile-dropdown').get(0);
+    this._buildShowHide(profileToggleEl, toggleContents, classBlock, renderIntoEl);
+  },
+
+  _buildShowHide: function(toggleEl, toggleContents, classBlock, renderIntoEl) {
+    this._renderShowHide(toggleEl, toggleContents, classBlock, renderIntoEl);
+  },
+
+  _renderShowHide: function(toggleEl, toggleContents, classBlock, renderIntoEl) {
+    var ShowHide = Marshmellow.ShowHide,
+        toggleComponent = (
+        <ShowHide toggleEl={toggleEl} classBlock={classBlock}>
+          {toggleContents}
+        </ShowHide>
+    );
+    React.renderComponent(toggleComponent, renderIntoEl);
   },
 
   renderNewBoardDropdown: function($headerEl) {
     // TODO: there must be a better way to do this
-    var $newBoardToggle = $($headerEl.find('#add-board-toggle')),
-        toggleContents = (
-          <ul className="horiz-nav">
-            <li className="horiz-nav__header">Add (close button on left later)</li>
-            <hr />
-            <li>
-              <a href="#" disabled="true">
-                <b>New Board...</b>
-                <p><small>A board is a collection of cards ordered in a list of
-                lists.  Use it to manage a project, track a collection, or
-                organize anything.</small></p>
-              </a>
-            </li>
-            <li>
-              <a href="#" disabled="true">
-                <b>New Organization...</b>
-                <p><small>An organization is a group of boards and people.
-                Use it to group boards in your company, team, or family.
-                </small></p>
-              </a>
-            </li>
-          </ul>
-        ),
-        renderIntoEl = $('#add-board-dropdown').get(0),
-        prependContents = (null);
-      this._buildShowHide($newBoardToggle, toggleContents, prependContents, renderIntoEl);
+    // TODO: refactor this to be similar to the other dropdown
+//    var $newBoardToggle = $($headerEl.find('#add-board-toggle')),
+//        toggleContents = (
+//          <ul className="horiz-nav">
+//            <li className="horiz-nav__header">Add (close button on left later)</li>
+//            <hr />
+//            <li>
+//              <a href="#" disabled="true">
+//                <b>New Board...</b>
+//                <p><small>A board is a collection of cards ordered in a list of
+//                lists.  Use it to manage a project, track a collection, or
+//                organize anything.</small></p>
+//              </a>
+//            </li>
+//            <li>
+//              <a href="#" disabled="true">
+//                <b>New Organization...</b>
+//                <p><small>An organization is a group of boards and people.
+//                Use it to group boards in your company, team, or family.
+//                </small></p>
+//              </a>
+//            </li>
+//          </ul>
+//        ),
+//        renderIntoEl = $('#add-board-dropdown').get(0),
+//        prependContents = (null);
+//      this._buildShowHide($newBoardToggle, toggleContents, prependContents, renderIntoEl);
     },
-
-    _buildShowHide: function($toggleEl, toggleContents, prependContents, renderIntoEl) {
-      var profileTogClasses = $toggleEl.attr("class"),
-          profileTogText = $toggleEl.text();
-      this._renderShowHide($toggleEl, profileTogClasses, prependContents,
-          profileTogText, toggleContents, renderIntoEl);
-    },
-
-    _renderShowHide: function($el, toggleClasses, prependContents, toggleText,
-                         toggleContents, renderIntoEl) {
-      var ShowHide = Marshmellow.ShowHide,
-          toggleComponent = (
-          <ShowHide additionalClasses={toggleClasses}
-          prependContent={prependContents} toggleText={toggleText} >
-            {toggleContents}
-          </ShowHide>
-      );
-      React.renderComponent(toggleComponent, renderIntoEl);
-      $el.remove();
-  },
 
   routes: {
     "": "index",

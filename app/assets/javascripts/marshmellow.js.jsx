@@ -4,6 +4,7 @@ window.Marshmellow = {
   Views: {},
   Routers: {},
   initialize: function() {
+    // Marshmellow.currentUser is set in shared/bootstrap
     Marshmellow.allBoards = new Marshmellow.Collections.Boards([]);
     Marshmellow.allBoards.fetch({
       success: function() {

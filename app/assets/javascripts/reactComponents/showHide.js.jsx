@@ -14,13 +14,14 @@ Marshmellow.ShowHide = React.createClass({
     // But it's better to toggle a CSS class when you can
     var hideClass = (this.state.hidden) ? "hide" : "";
     return (
-      <div className="show-hide">
+      <div className={"show-hide-" + this.props.classBlock}>
         {this.props.prependContents}
-        <div className={"show-hide__toggle " + this.props.additionalClasses}
+        <div className={"show-hide" + this.props.classBlock + "__toggle"}
           onClick={this.toggleContent} >
-          {this.props.toggleText}
+          {this.props.toggleEl}
         </div>
-        <div className={"show-hide__content " + hideClass} ref="content">
+        <div className={"show-hide-" + this.props.classBlock + "__content"}
+          ref="content">
           {this.props.children}
         </div>
       </div>

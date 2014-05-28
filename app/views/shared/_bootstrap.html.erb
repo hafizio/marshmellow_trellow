@@ -1,4 +1,5 @@
 <script>
   var currentUserJSON = <%= sanitize current_user.to_json(only: [:id, :username]) %>;
   Marshmellow.currentUser = new Marshmellow.Models.User(currentUserJSON);
+  Marshmellow.currentUser.avatarUrl = "<%= avatar_url(current_user, 31) %>";
 </script>

@@ -15,14 +15,7 @@
     <ul class="nav nav-collapse" id="marshmellow-navbar-collapse-1">
       <% if user_signed_in? %>
         <li>
-          <div id="profile-toggle" class="button-group">
-            <a href="#" id="profile-toggle__avatar-button" class="button button-default header-gravatar" disabled="true">
-            <img src="<%= avatar_url(current_user, 31) %>">
-            </a>
-            <a href="#" class="button button-default" disabled="true"><%= current_user.username %></a>
-          </div>
           <div id="profile-dropdown"></div>
-        <li><%= link_to "Log Out", destroy_user_session_url, method: :delete, class: "js-hide" %></li>
         <li><a href="#" id="add-board-toggle" class="button button-default"><span class="add-icons-later">&#x2b;</span></a>
         <div id="add-board-dropdown"></div>
       <% else %>
