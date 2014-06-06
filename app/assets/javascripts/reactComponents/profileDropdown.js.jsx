@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 
-Marshmellow.BoardDropdown = React.createClass({
+Marshmellow.ProfileDropdown = React.createClass({
   _buildShowHide: function(toggleEl, toggleContents, classBlock, renderIntoEl) {
     return this._renderShowHide(toggleEl, toggleContents, classBlock, renderIntoEl);
   },

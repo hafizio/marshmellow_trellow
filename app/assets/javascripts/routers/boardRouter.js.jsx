@@ -7,7 +7,7 @@ Marshmellow.Routers.BoardRouter = Backbone.Router.extend({
   },
 
   renderHeaderElements: function($headerEl) {
-    React.renderComponent(Marshmellow.BoardDropdown, $headerEl);
+    React.renderComponent(Marshmellow.ProfileDropdown, $headerEl);
     this.renderNewBoardDropdown($headerEl.get(0));
   },
 
