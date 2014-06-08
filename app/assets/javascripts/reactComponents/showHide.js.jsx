@@ -14,7 +14,7 @@ Marshmellow.ShowHide = React.createClass({
       <div className={"show-hide-" + this.props.classBlock}>
         <div className={this.props.classBlock + "-show-hide__toggle"}>
           <button
-          className={this.props.classBlock + "-show-hide-" + "__toggle-button"}
+          className={this.props.classBlock + "-show-hide-" + "__toggle-button button button-inverse"}
           type="button"
           onClick={this.toggleContent}>
             {this.props.label}
