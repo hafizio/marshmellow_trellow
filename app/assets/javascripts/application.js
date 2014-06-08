@@ -20,6 +20,7 @@
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./util
+//= require ./reactComponents/showHide
 //= require ./reactComponents/list
 //= require ./reactComponents/board
 //= require ./reactComponents/boardForm

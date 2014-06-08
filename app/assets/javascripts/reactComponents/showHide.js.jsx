@@ -10,22 +10,30 @@ Marshmellow.ShowHide = React.createClass({
   },
 
   render: function() {
-    // We could use JS to manually set the display:none property
-    // But it's better to toggle a CSS class when you can
-    var hideClass = (this.state.hidden) ? "hide" : "";
     return (
       <div className={"show-hide-" + this.props.classBlock}>
-        {this.props.prependContents}
-        <div className={"show-hide" + this.props.classBlock + "__toggle"}
-          onClick={this.toggleContent} >
-          {this.props.toggleEl}
+        <div className={this.props.classBlock + "-show-hide__toggle"}>
+          <button
+          className={this.props.classBlock + "-show-hide-" + "__toggle-button"}
+          type="button"
+          onClick={this.toggleContent}>
+            {this.props.label}
+          </button>
         </div>
-        <div className={"show-hide-" + this.props.classBlock + "__content"}
-          ref="content">
-          {this.props.children}
-        </div>
+        {this._renderContent()}
       </div>
     )
-  }
+  },
 
+  _renderContent: function() {
+    if (!this.state.hidden) {
+      return (
+        <div
+         className={this.props.classBlock + "-show-hide__content"}
+         ref="content">
+           {this.props.children}
+        </div>
+      );
+    }
+  }
 });

@@ -10,7 +10,7 @@ window.Marshmellow = {
       success: function() {
         boardRouter = new Marshmellow.Routers.BoardRouter({
           $rootEl: $('#backbone-index-boards'),
-          $headerEl: $('#mm-main-header')
+          $profileDropdownEl: $('#profile-dropdown')
         });
         Backbone.history.start();
       }
