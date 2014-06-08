@@ -3,7 +3,7 @@
 Marshmellow.List = React.createClass({
   render: function() {
     return (
-      <li>{this.props.listModel.get('title')}</li>
+      <li className="editable">{this.props.listModel.get('title')}</li>
     );
   }
 });

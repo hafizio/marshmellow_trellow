@@ -42,3 +42,17 @@ $brand-color: #23719F;
   TODO: convert Happy Cupcake to BEM and flatten out style nesting. */
   display: none !important;
 }
+
+.editable {
+  cursor: pointer;
+  font-weight: bold;
+  padding: .5em;
+  margin-bottom: 1.5em;
+  &:hover {
+    background-color: lighten($brand-color, 10%);
+  }
+}
+
+li.editable {
+  list-style: none;
+}
