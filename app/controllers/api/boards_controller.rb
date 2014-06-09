@@ -16,6 +16,6 @@ class Api::BoardsController < ApplicationController
   end
 
   def index
-    @boards = current_user.boards
+    @boards = current_user.boards.includes(lists: [:cards])
   end
 end
