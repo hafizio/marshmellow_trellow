@@ -1,8 +1,13 @@
 /** @jsx React.DOM */
 
 Marshmellow.BoardTitleForm = React.createClass({
+  mixins: [React.addons.LinkedStateMixin],
+
   getInitialState: function() {
-    return ({showForm: false});
+    return ({
+      showForm: false,
+      title: this.props.title
+    });
   },
 
   handleFocus: function() {
@@ -26,14 +31,15 @@ Marshmellow.BoardTitleForm = React.createClass({
       type="text"
       ref="boardTitle"
       onBlur={this.handleBlur}
-      value={this.props.board.get('title')} />
+      onChange={this.handleChange}
+      valueLink={this.linkState('title')} />
     );
   },
 
   renderTitle: function() {
     return (
       <div className="editable" onClick={this.handleFocus}>
-        {this.props.board.get('title')}
+        {this.state.title}
       </div>
     );
   },

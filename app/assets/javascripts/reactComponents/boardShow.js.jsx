@@ -12,7 +12,7 @@ Marshmellow.BoardShow = React.createClass({
     var theTitle = this.state.board.get('title');
     return (
       <div className='boards-show'>
-        <BoardTitleForm board={this.state.board} />
+        <BoardTitleForm title={this.state.board.get('title')} />
         <BoardDetail boardModel={this.state.board} showTitle={false} />
       </div>
     );
