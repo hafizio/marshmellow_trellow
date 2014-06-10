@@ -18,4 +18,14 @@ class Api::BoardsController < ApplicationController
   def index
     @boards = current_user.boards.includes(lists: [:cards])
   end
+
+  def update
+    @board = Board.where(id: params[:id]).includes(lists: [:cards]).first
+
+    if @board.update_attributes(params[:board])
+      render json: @board
+    else
+      render json: { errors: @board.errors.full_messages }, status: 422
+    end
+  end
 end
