@@ -5,6 +5,7 @@ Marshmellow::Application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :boards, only: [:show, :index, :create, :update]
+    resources :lists, only: :update
   end
 
 end
