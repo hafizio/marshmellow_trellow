@@ -26,6 +26,7 @@
 //= require ./reactComponents/boardForm
 //= require ./reactComponents/changeTitleForm
 //= require ./reactComponents/boardTitleForm
+//= require ./reactComponents/listTitleForm
 //= require ./reactComponents/boardIndex
 //= require ./reactComponents/profileDropdown
 //= require_tree .

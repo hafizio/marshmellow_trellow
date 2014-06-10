@@ -2,8 +2,9 @@
 
 Marshmellow.List = React.createClass({
   render: function() {
+    var ListTitleForm = Marshmellow.ListTitleForm;
     return (
-      <li className="editable">{this.props.listModel.get('title')}</li>
+      <ListTitleForm list={this.props.listModel} />
     );
   }
 });

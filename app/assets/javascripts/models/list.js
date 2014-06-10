@@ -1,1 +1,3 @@
-Marshmellow.Models.List = Backbone.Model.extend({});
+Marshmellow.Models.List = Backbone.Model.extend({
+  urlRoot: 'api/lists'
+});
